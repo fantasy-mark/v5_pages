@@ -391,36 +391,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%B7%A5%E5%85%B7%E3%80%81%E7%8E%AF%E5%A2%83/%E5%9C%A8%E7%BA%BF%E5%B9%B3%E5%8F%B0/" class="md-nav__link">
-        在线平台
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../%E5%B7%A5%E5%85%B7%E3%80%81%E7%8E%AF%E5%A2%83/gradle%E7%BC%96%E8%AF%91/" class="md-nav__link">
         gradle编译
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E5%B7%A5%E5%85%B7%E3%80%81%E7%8E%AF%E5%A2%83/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
-        常用命令
       </a>
     </li>
   
@@ -649,6 +621,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kaggle" class="md-nav__link">
+    kaggle
+  </a>
   
 </li>
       
@@ -900,6 +879,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#kaggle" class="md-nav__link">
+    kaggle
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -926,6 +912,7 @@
 <li><a href="#_4">加载微调后模型和参数文件</a></li>
 </ul>
 </li>
+<li><a href="#kaggle">kaggle</a></li>
 </ul>
 </div>
 <h3 id="_1">语音识别</h3>
@@ -1148,6 +1135,22 @@
 <a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    <span class="n">predict_answer_tokens</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;input_ids&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">answer_start_index</span><span class="p">:</span><span class="n">answer_end_index</span><span class="p">]</span>
 <a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    <span class="n">predicted_answer</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">predict_answer_tokens</span><span class="p">)</span>
 <a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">question</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">predicted_answer</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="kaggle"><a href="https://www.kaggle.com/code">kaggle</a></h3>
+<blockquote>
+<p>kaggle是一个在线pynb</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 不导入会产生的问题参考：https://blog.csdn.net/qq_43374681/article/details/115469240</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">import</span> <span class="nn">os</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;KMP_DUPLICATE_LIB_OK&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;TRUE&quot;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Matplotlib是Python的一个绘图库，是Python中最常用的可视化工具之一</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="kn">import</span> <span class="nn">torch</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># torch.nn是为神经网络设计的模块化接口。构建于autograd之上，可以用来定义和运行神经网络。</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># NumPy是Python语言的一个扩充程序库。支持高级大量的维度数组与矩阵运算，此外也针对#数组运算提供大量的数学函数库。</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Pandas是基于NumPy 的一种工具，该工具是为了解决数据分析任务而创建的。Pandas 纳##入了大量库和一些标准的数据模型，提供了高效地操作大型数据集所需的工具。Pandas提#供了大量能使我们快速便捷地处理数据的函数和方法。</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </code></pre></div>
 
 
