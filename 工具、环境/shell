@@ -1,0 +1,12 @@
+### 文件分割、组合
+
+```shell
+split -b 50m all.tar part_
+cat part_* > all.tar
+```
+
+### 搜索
+
+```shell
+find . -name "*.py" | xargs grep "print(path)"
+```
