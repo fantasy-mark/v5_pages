@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#imagenet-classification-with-deep-convolutional-neural-networks" class="md-skip">
+        <a href="#alexnet-imagenet-classification-with-deep-convolutional-neural-networks" class="md-skip">
           Skip to content
         </a>
       
@@ -703,15 +703,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#imagenet-classification-with-deep-convolutional-neural-networks" class="md-nav__link">
-    ImageNet Classification with Deep Convolutional Neural Networks
+  <a href="#alexnet-imagenet-classification-with-deep-convolutional-neural-networks" class="md-nav__link">
+    AlexNet - ImageNet Classification with Deep Convolutional Neural Networks
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deep-residual-learning-for-image-recognition" class="md-nav__link">
-    Deep Residual Learning for Image Recognition
+  <a href="#restnet-deep-residual-learning-for-image-recognition" class="md-nav__link">
+    RestNet - Deep Residual Learning for Image Recognition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-attention-is-all-you-need" class="md-nav__link">
+    Transformer - Attention is All you Need
   </a>
   
 </li>
@@ -896,15 +903,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#imagenet-classification-with-deep-convolutional-neural-networks" class="md-nav__link">
-    ImageNet Classification with Deep Convolutional Neural Networks
+  <a href="#alexnet-imagenet-classification-with-deep-convolutional-neural-networks" class="md-nav__link">
+    AlexNet - ImageNet Classification with Deep Convolutional Neural Networks
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deep-residual-learning-for-image-recognition" class="md-nav__link">
-    Deep Residual Learning for Image Recognition
+  <a href="#restnet-deep-residual-learning-for-image-recognition" class="md-nav__link">
+    RestNet - Deep Residual Learning for Image Recognition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-attention-is-all-you-need" class="md-nav__link">
+    Transformer - Attention is All you Need
   </a>
   
 </li>
@@ -928,14 +942,16 @@
 
 <div class="toc">
 <ul>
-<li><a href="#imagenet-classification-with-deep-convolutional-neural-networks">ImageNet Classification with Deep Convolutional Neural Networks</a></li>
-<li><a href="#deep-residual-learning-for-image-recognition">Deep Residual Learning for Image Recognition</a></li>
+<li><a href="#alexnet-imagenet-classification-with-deep-convolutional-neural-networks">AlexNet - ImageNet Classification with Deep Convolutional Neural Networks</a></li>
+<li><a href="#restnet-deep-residual-learning-for-image-recognition">RestNet - Deep Residual Learning for Image Recognition</a></li>
+<li><a href="#transformer-attention-is-all-you-need">Transformer - Attention is All you Need</a></li>
 </ul>
 </div>
-<p>pdf<a href="https://translate.google.com">在线翻译</a></p>
-<h5 id="imagenet-classification-with-deep-convolutional-neural-networks">ImageNet Classification with Deep Convolutional Neural Networks</h5>
+<p><a href="https://fanyi.youdao.com/index.html#/">有道翻译</a></p>
+<h3 id="alexnet-imagenet-classification-with-deep-convolutional-neural-networks">AlexNet - ImageNet Classification with Deep Convolutional Neural Networks</h3>
 <p><a href="https://www.bilibili.com/video/BV1ih411J7Kz">B站</a></p>
 <p><a href="https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf">论文</a></p>
+<p><a href="https://blog.csdn.net/guzhao9901/article/details/118552085">网络结构详解</a></p>
 <ul>
 <li>AlexNet，深度神经网络</li>
 <li>Training on Multiple GPUs</li>
@@ -947,7 +963,7 @@
 <li>向量集合：输入图片在 CNN 的倒数第二层的数，作为每个图片的语义向量；ps：作者并没有意识到此关键现象</li>
 </ul>
 <p><img alt="" src="../../static/imgs/uTools_1683464657349.png" /></p>
-<h5 id="deep-residual-learning-for-image-recognition">Deep Residual Learning for Image Recognition</h5>
+<h3 id="restnet-deep-residual-learning-for-image-recognition">RestNet - Deep Residual Learning for Image Recognition</h3>
 <p><a href="https://www.bilibili.com/video/BV1Fb4y1h73E/?spm_id_from=333.999.0.0&amp;vd_source=5e595c6d63b8700bce5780e53ed0a87f">B站</a></p>
 <p><a href="https://arxiv.org/abs/1512.03385">论文</a></p>
 <ul>
@@ -960,7 +976,26 @@
 <ul>
 <li>带短连接的网络的拟合高维函数的能力比普通连接的网络更强，梯度上比不加残差多了对x的梯度</li>
 <li>更快的收敛</li>
-<li>不容易出现梯度太小而导致梯度消失</li>
+<li>加入项能避免求导后整体趋于0，不容易出现梯度太小而导致梯度消失</li>
+</ul>
+<h3 id="transformer-attention-is-all-you-need">Transformer - Attention is All you Need</h3>
+<p><a href="https://arxiv.org/abs/1706.03762">论文</a></p>
+<p><img alt="uTools_1688608430868" src="../../static/imgs/uTools_1688608430868.png" /></p>
+<p><img alt="" src="../../static/imgs/uTools_1688610239381.png" /></p>
+<ul>
+<li>encoder-decoder架构，Bert使用了encoder，Gpt则使用了decode</li>
+<li>multi-attention:  query、key相似度是key-value的权重，上方图即对应scaled dot-product</li>
+</ul>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}})V
+</div>
+<script type="math/tex; mode=display">
+Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}})V
+</script>
+</div>
+<ul>
+<li>对比RNN，Transformer在做Attention运算（一次输入所有数据+嵌入位置信息）已经汇聚了全局的信息；而RNN需要根据时序获得全局信息，且无法并行运算</li>
 </ul>
 
 
