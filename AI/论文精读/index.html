@@ -1127,6 +1127,12 @@ Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}})V
 <h3 id="mae-masked-autoencoders-are-scalable-vision-learners">MAE - Masked Autoencoders Are Scalable Vision Learners</h3>
 <p><a href="https://arxiv.org/abs/2111.06377">论文</a></p>
 <p><a href="https://www.bilibili.com/video/BV1sq4y1q77t/?spm_id_from=333.788&amp;vd_source=5e595c6d63b8700bce5780e53ed0a87f">B站</a></p>
+<ul>
+<li>图像切成不重叠的patch，并随机mask掉部分patch，mask掉的就是图中灰色的patch</li>
+<li>可见的patch输入到encoder中，经过编码得到每个patch的特征</li>
+<li>把mask的patch重新放回原来的位置，输入到decoder中去进行重构</li>
+<li>MAE的encoder是一个ViT，不同的是只输入没有masked掉的部分</li>
+</ul>
 
 
 
