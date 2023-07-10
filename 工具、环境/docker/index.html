@@ -699,6 +699,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#docker-compose_2" class="md-nav__link">
+    较复杂的docker-compose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker" class="md-nav__link">
     常用docker仓库
   </a>
@@ -1195,6 +1202,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#docker-compose_2" class="md-nav__link">
+    较复杂的docker-compose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker" class="md-nav__link">
     常用docker仓库
   </a>
@@ -1528,24 +1542,79 @@
 <a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># 在运行的镜像(需要安装了bash)中执行命令</span>
 <a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>docker-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>Server_Name<span class="w"> </span>/bin/bash
 </code></pre></div>
+<hr />
+<h3 id="docker-compose_2">较复杂的docker-compose</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># docker-compose.yml</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.3&quot;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nt">services</span><span class="p">:</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="nt">web</span><span class="p">:</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;xxx.xxx.xxx.xxx:9004/calc-web:1.0.0&quot;</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="c1"># build:</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="c1">#   context: .</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="c1">#   dockerfile: Dockerfile_web</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;9004:5000&quot;</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./code:/code</span><span class="w">   </span><span class="c1"># 主机目录:容器内目录</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">      </span><span class="nt">FLASK_DEBUG</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;false&quot;</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">  </span><span class="nt">redis</span><span class="p">:</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;redis:alpine&quot;</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">  </span><span class="nt">svn</span><span class="p">:</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;xxx.xxx.xxx.xxx:9004/calc-svn:1.0.0&quot;</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="w">    </span><span class="c1"># build:</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="w">    </span><span class="c1">#   context: .</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="w">    </span><span class="c1">#   dockerfile: Dockerfile_svn</span>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./code:/code</span><span class="w">   </span><span class="c1"># 主机目录:容器内目录</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Dockerfile_web</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="l l-Scalar l-Scalar-Plain">FROM python:3.7-alpine</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="l l-Scalar l-Scalar-Plain">WORKDIR /code</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="l l-Scalar l-Scalar-Plain">ENV FLASK_APP=app.py</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="l l-Scalar l-Scalar-Plain">ENV FLASK_RUN_HOST=0.0.0.0</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="l l-Scalar l-Scalar-Plain">RUN apk add --no-cache gcc musl-dev linux-headers</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="l l-Scalar l-Scalar-Plain">COPY requirements.txt requirements.txt</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="l l-Scalar l-Scalar-Plain">RUN pip install -r requirements.txt</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="l l-Scalar l-Scalar-Plain">EXPOSE 5000</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="l l-Scalar l-Scalar-Plain">COPY . .</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="l l-Scalar l-Scalar-Plain">CMD [&quot;flask&quot;, &quot;run&quot;]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Dockerfile_svn</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="l l-Scalar l-Scalar-Plain">FROM ubuntu:20.04</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="l l-Scalar l-Scalar-Plain">WORKDIR /code</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="l l-Scalar l-Scalar-Plain">RUN apt-get update &amp;&amp; apt-get install cron -y &amp;&amp; apt-get install python3 -y &amp;&amp; apt-get install subversion -y</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="l l-Scalar l-Scalar-Plain"># Copy daily-cron file to the cron.d directory</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="l l-Scalar l-Scalar-Plain">COPY daily-cron /etc/cron.d/daily-cron</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="l l-Scalar l-Scalar-Plain"># Give execution rights on the cron job</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="l l-Scalar l-Scalar-Plain">RUN chmod 0644 /etc/cron.d/daily-cron</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="l l-Scalar l-Scalar-Plain"># Apply cron job</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="l l-Scalar l-Scalar-Plain">RUN crontab /etc/cron.d/daily-cron</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="l l-Scalar l-Scalar-Plain"># Create the log file to be able to run tail</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="l l-Scalar l-Scalar-Plain">RUN touch /var/log/cron.log</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="l l-Scalar l-Scalar-Plain"># Run the command on container startup, 防止Exited(2)</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="l l-Scalar l-Scalar-Plain">CMD service cron start &amp;&amp; tail -f /var/log/cron.log</span>
+</code></pre></div>
+<hr />
 <h3 id="docker">常用docker仓库</h3>
 <h5 id="pythonjupyterlab">python/jupyterlab 镜像</h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">jupyter:latest</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/jupyter</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">8888</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bash&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;jupyter lab --notebook-dir=/jupyter --ip 0.0.0.0 --no-browser --allow-root&quot;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">jupyter:latest</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/jupyter</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">8888</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bash&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;jupyter lab --notebook-dir=/jupyter --ip 0.0.0.0 --no-browser --allow-root&quot;</span><span class="p">]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>docker<span class="w"> </span>build<span class="w"> </span>.<span class="w"> </span>--file<span class="w"> </span>Dockerfile<span class="w"> </span>--tag<span class="w"> </span>image-python/python-3.9
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-p<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span>jupyter/base-notebook:latest
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>docker<span class="w"> </span>build<span class="w"> </span>.<span class="w"> </span>--file<span class="w"> </span>Dockerfile<span class="w"> </span>--tag<span class="w"> </span>image-python/python-3.9
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-p<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span>jupyter/base-notebook:latest
 </code></pre></div>
 <p>Or</p>
 <blockquote>
 <p>github自动构建 - 这个包包含了java环境，太大不建议使用</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>image_python<span class="w"> </span>-d<span class="w">  </span>-p<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span>registry.cn-shenzhen.aliyuncs.com/hanlp/hanlp_lab
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>image_python<span class="w"> </span>-d<span class="w">  </span>-p<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span>registry.cn-shenzhen.aliyuncs.com/hanlp/hanlp_lab
 </code></pre></div>
 <hr />
 <h3 id="play-with-docker"><a href="https://labs.play-with-docker.com/">play-with-docker</a></h3>
