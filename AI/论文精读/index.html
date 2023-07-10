@@ -1159,6 +1159,7 @@ Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}})V
 </li>
 <li>动态字典的要求：（1）key数量足够多 （2）训练过程中，key要具有一致性，由相同或者相似的编码器得到，与q进行查询时才能保持一致（字典中的key是随机取样的）</li>
 <li>MoCo的两个亮点： （1）利用queue解决key数量过大，GPU显存不够的问题（每次只用queue中的一个batch进行训练） （2）引入momentum encoder，将m设大，是其更新缓慢，保证了key的一致性</li>
+<li>恺明大神非常有远见的提出了：it is possible to adopt MoCo for pretext tasks like masked auto-encoding，这正是两年后MAE的思想</li>
 </ul>
 
 
