@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#bash" class="md-skip">
           Skip to content
         </a>
       
@@ -647,29 +647,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    文件分割、组合
+  <a href="#bash" class="md-nav__link">
+    bash小技巧
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    搜索
+  <a href="#splitcat-" class="md-nav__link">
+    split/cat - 文件分割、组合
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    下载
+  <a href="#find-" class="md-nav__link">
+    find - 搜索
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    定时任务
+  <a href="#curl-" class="md-nav__link">
+    curl - 下载
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cron-" class="md-nav__link">
+    cron - 定时任务
   </a>
   
 </li>
@@ -924,29 +931,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    文件分割、组合
+  <a href="#bash" class="md-nav__link">
+    bash小技巧
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    搜索
+  <a href="#splitcat-" class="md-nav__link">
+    split/cat - 文件分割、组合
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    下载
+  <a href="#find-" class="md-nav__link">
+    find - 搜索
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    定时任务
+  <a href="#curl-" class="md-nav__link">
+    curl - 下载
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cron-" class="md-nav__link">
+    cron - 定时任务
   </a>
   
 </li>
@@ -968,36 +982,55 @@
 
   <h1>shell</h1>
 
-<h3 id="_1">文件分割、组合</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>split<span class="w"> </span>-b<span class="w"> </span>50m<span class="w"> </span>all.tar<span class="w"> </span>part_
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cat<span class="w"> </span>part_*<span class="w"> </span>&gt;<span class="w"> </span>all.tar
+<h3 id="bash">bash小技巧</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>very_long_dirname
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># !^/!$ 指代 第一/最后 参数, !:n 指代第n个参数(从1开始)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># 比如打错了 mvv one_dir other_dir</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>mv<span class="w"> </span>!^<span class="w"> </span>!$
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># 执行上条命令, 上上条则 !-2</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>!!
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># 执行 history 对应 index 命令</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>!1152
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># ctrl + r 搜索历史命令</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># ctrl + a 光标移动最前</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># ctrl + e 光标移动最后</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># ctrl + h 删除光标前面一个字符</span>
 </code></pre></div>
-<h3 id="_2">搜索</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.py&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;print(path)&quot;</span>
+<h3 id="splitcat-">split/cat - 文件分割、组合</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>split<span class="w"> </span>-b<span class="w"> </span>50m<span class="w"> </span>all.tar<span class="w"> </span>part_
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cat<span class="w"> </span>part_*<span class="w"> </span>&gt;<span class="w"> </span>all.tar
 </code></pre></div>
-<h3 id="_3">下载</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 断点续传下载文件, 需要服务器解析Content-Range请求头</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>curl<span class="w"> </span>-C<span class="w"> </span>-<span class="w"> </span>-O<span class="w"> </span>https://releases.ubuntu.com/22.04/ubuntu-22.04-desktop-amd64.iso
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Restful 请求</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>--data<span class="w"> </span><span class="s1">&#39;keyword=value&#39;</span><span class="w"> </span>http://domain.com/mypath/
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># 添加头部</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type:application/json&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: bearer MyToken&#39;</span><span class="w"> </span>http://domain.com/mypath/
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># 设置代理</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>curl<span class="w"> </span>-x<span class="w"> </span>socks5://proxyuser:proxypassword@proxy.domain.com:8001<span class="w"> </span>https://domain.com/mypath/
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># 帮助</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>curl<span class="w"> </span>--help<span class="w"> </span>all
+<h3 id="find-">find - 搜索</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.py&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;print(path)&quot;</span>
 </code></pre></div>
-<h3 id="_4">定时任务</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>servicec<span class="w"> </span>cron<span class="w"> </span>start
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>service<span class="w"> </span>cron<span class="w"> </span>status
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w"> </span>*<span class="w"> </span>cron<span class="w"> </span>is<span class="w"> </span>running
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>cat<span class="w"> </span>/etc/cron.d/daily-cron
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># */3 * * * * date &gt;&gt; /var/log/cron.log 2&gt;&amp;1</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># 编辑daily-cron后必须执行以下命令</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>crontab<span class="w"> </span>/etc/cron.d/daily-cron<span class="w"> </span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>service<span class="w"> </span>cron<span class="w"> </span>reload
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>service<span class="w"> </span>cron<span class="w"> </span>restart
+<h3 id="curl-">curl - 下载</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 断点续传下载文件, 需要服务器解析Content-Range请求头</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>curl<span class="w"> </span>-C<span class="w"> </span>-<span class="w"> </span>-O<span class="w"> </span>https://releases.ubuntu.com/22.04/ubuntu-22.04-desktop-amd64.iso
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Restful 请求</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>--data<span class="w"> </span><span class="s1">&#39;keyword=value&#39;</span><span class="w"> </span>http://domain.com/mypath/
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># 添加头部</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type:application/json&#39;</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: bearer MyToken&#39;</span><span class="w"> </span>http://domain.com/mypath/
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># 设置代理</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>curl<span class="w"> </span>-x<span class="w"> </span>socks5://proxyuser:proxypassword@proxy.domain.com:8001<span class="w"> </span>https://domain.com/mypath/
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># 帮助</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>curl<span class="w"> </span>--help<span class="w"> </span>all
+</code></pre></div>
+<h3 id="cron-">cron - 定时任务</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>servicec<span class="w"> </span>cron<span class="w"> </span>start
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>service<span class="w"> </span>cron<span class="w"> </span>status
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w"> </span>*<span class="w"> </span>cron<span class="w"> </span>is<span class="w"> </span>running
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>cat<span class="w"> </span>/etc/cron.d/daily-cron
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># 每3分钟执行一次</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># */3 * * * * date &gt;&gt; /var/log/cron.log 2&gt;&amp;1</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># 每3小时执行一次</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1"># 0 */3 * * * cd /code &amp;&amp; python3 daily.py</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># 编辑daily-cron后必须执行以下命令</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>crontab<span class="w"> </span>/etc/cron.d/daily-cron<span class="w"> </span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>service<span class="w"> </span>cron<span class="w"> </span>reload
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>service<span class="w"> </span>cron<span class="w"> </span>restart
 </code></pre></div>
 
 
