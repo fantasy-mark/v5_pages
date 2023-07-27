@@ -15,7 +15,7 @@
         <link rel="next" href="../../AI/%E6%9C%AF%E8%AF%AD/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+      <meta name="generator" content="mkdocs-1.5.0, mkdocs-material-9.1.20">
     
     
       
@@ -723,6 +723,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    网络问题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -923,6 +930,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    网络问题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1003,6 +1017,17 @@
 <blockquote>
 <p>github的Page开启需要公开仓库或者付费, 可以设置为私有, 通过Action推送需要的分支到另外一个公开仓库用于page</p>
 </blockquote>
+<h3 id="_1">网络问题</h3>
+<blockquote>
+<p>fatal: unable to access 'https://github.com/fantasy-mark/v5_docs.git/': Failed to connect to github.com port 443 after 21101 ms: Couldn't connect to server</p>
+</blockquote>
+<p>修改 <a href="C:\Windows\System32\drivers\etc\hosts">hosts文件</a> 解决</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># localhost name resolution is handled within DNS itself.</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># 127.0.0.1 localhost</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># ::1 localhost20.205.243.166 github.com</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ipconfig<span class="w"> </span>/flushdns
+</code></pre></div>
 
 
 
