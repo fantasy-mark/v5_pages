@@ -1174,10 +1174,12 @@
 
 <h3 id="_1">安装配置</h3>
 <ul>
-<li><a href="https://www.docker.com/">官网下载</a></li>
-</ul>
-<ul>
-<li>配置代理 (Setting-&gt;Resources-&gt;Proxies) 如果无需代理访问外网则无需设置</li>
+<li>
+<p><a href="https://www.docker.com/">官网下载</a></p>
+</li>
+<li>
+<p>配置代理 (Setting-&gt;Resources-&gt;Proxies) 如果无需代理访问外网则无需设置</p>
+</li>
 <li>共享目录 (Setting-&gt;Resources-&gt;File Sharing) </li>
 </ul>
 <h3 id="_2">镜像</h3>
@@ -1345,8 +1347,8 @@
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">cd</span><span class="w"> </span>composetest
 </code></pre></div>
 <ol>
-<li>
-<p>Create a file called <code>app.py</code> in your project directory and paste the following code in:</p>
+<li>Create a file called <code>app.py</code> in your project directory and paste the following code in:</li>
+</ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span> <span class="nn">time</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kn">import</span> <span class="nn">redis</span>
@@ -1372,14 +1374,12 @@
 <a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>    <span class="n">count</span> <span class="o">=</span> <span class="n">get_hit_count</span><span class="p">()</span>
 <a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>    <span class="k">return</span> <span class="s1">&#39;Hello World! I have been seen </span><span class="si">{}</span><span class="s1"> times.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
 </code></pre></div>
-</li>
-<li>
-<p>Create another file called <code>requirements.txt</code> in your project directory and paste the following code in:</p>
+<ol>
+<li>Create another file called <code>requirements.txt</code> in your project directory and paste the following code in:</li>
+</ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">flask</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">redis</span>
 </code></pre></div>
-</li>
-</ol>
 <p>Step 2: Create a Dockerfile</p>
 <p>The Dockerfile is used to build a Docker image. The image contains all the dependencies the Python application requires, including Python itself.</p>
 <p>In your project directory, create a file named <code>Dockerfile</code> and paste the following code in:</p>
@@ -1433,14 +1433,12 @@
 <a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>redis_1  | 1:M 17 Aug 22:11:10.483 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command &#39;echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled&#39; as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
 </code></pre></div>
 <ol>
-<li>
-<p>Enter http://localhost:8000/ in a browser to see the application running.</p>
+<li>Enter http://localhost:8000/ in a browser to see the application running.</li>
+</ol>
 <p>If this doesn’t resolve, you can also try http://127.0.0.1:8000.</p>
 <p>You should see a message in your browser saying:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Hello World! I have been seen 1 times.
 </code></pre></div>
-</li>
-</ol>
 <p>Step 5: Edit the Compose file to add a bind mount</p>
 <p>Edit <code>docker-compose.yml</code> in your project directory to add a <a href="https://docs.docker.com/storage/bind-mounts/">bind mount</a> for the <code>web</code> service:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.9&quot;</span>
@@ -1595,7 +1593,7 @@
         
       
         
-          <script src="../../assets/javascripts/mathjax.js"></script>
+          <script src="../../js/umlconvert.js"></script>
         
       
     

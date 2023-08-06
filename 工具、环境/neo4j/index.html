@@ -1067,14 +1067,16 @@
 <h2 id="_1">安装</h2>
 <ol>
 <li><a href="https://dist.neo4j.org/neo4j-community-5.6.0-windows.zip">下载community版本</a></li>
-<li>设置环境变量</li>
+<li>
+<p>设置环境变量</p>
+</li>
+<li>
+<p><code>NEO4J_HOME</code>  : <code>E:\neo4j-community-5.6.0</code></p>
+</li>
+<li>
+<p><code>PATH</code> : <code>%NEO4J_HOME%\bin</code></p>
+</li>
 </ol>
-<ul>
-<li><code>NEO4J_HOME</code>  : <code>E:\neo4j-community-5.6.0</code></li>
-</ul>
-<ul>
-<li><code>PATH</code> : <code>%NEO4J_HOME%\bin</code></li>
-</ul>
 <h2 id="_2">使用</h2>
 <ol>
 <li>启动<code>neo4j</code></li>
@@ -1082,13 +1084,15 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>neo4j.bat<span class="w"> </span>console
 </code></pre></div>
 <ol>
-<li><a href="http://localhost:7474/">浏览器登录</a></li>
-</ol>
-<ul>
-<li>默认账号密码 <code>neo4j，</code>初次登录需要更改密码</li>
-</ul>
-<ol>
-<li>测试是否生成节点</li>
+<li>
+<p><a href="http://localhost:7474/">浏览器登录</a></p>
+</li>
+<li>
+<p>默认账号密码 <code>neo4j，</code>初次登录需要更改密码</p>
+</li>
+<li>
+<p>测试是否生成节点</p>
+</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">create</span><span class="p">(</span><span class="n">e</span><span class="p">:</span><span class="n">Person</span><span class="err">{</span><span class="n">name</span><span class="p">:</span><span class="ss">&quot;李四&quot;</span><span class="err">}</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">e</span>
 </code></pre></div>
@@ -1191,7 +1195,7 @@
         
       
         
-          <script src="../../assets/javascripts/mathjax.js"></script>
+          <script src="../../js/umlconvert.js"></script>
         
       
     

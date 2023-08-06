@@ -1164,15 +1164,11 @@
 <p>这几行代码就足以遍历任何一棵二叉树了。对于递归函数 <code>traverse(root)</code>，只要相信给它一个根节点 <code>root</code>，它就能遍历这棵树。所以只需要把这个节点的左右节点再传给这个函数就行了。</p>
 </blockquote>
 <ul>
-<li>优点<ol>
+<li>优点</li>
 <li>结构清晰，可读性强。</li>
 <li>练习分析问题的结构。当发现问题可以被分解成相同结构的小问题时，递归写多了就能敏锐发现这个特点，进而高效解决问题。</li>
-</ol>
-</li>
-<li>缺点<ol>
+<li>缺点</li>
 <li>在程序执行中，递归是利用堆栈来实现的。每当进入一个函数调用，栈就会增加一层栈帧，每次函数返回，栈就会减少一层栈帧。而栈不是无限大的，当递归层数过多时，就会造成 <strong>栈溢出</strong> 的后果。</li>
-</ol>
-</li>
 </ul>
 <blockquote>
 <p>分治（英语：Divide and Conquer），字面上的解释是「分而治之」，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。</p>
@@ -1185,20 +1181,20 @@
 <ul>
 <li>
 <p>区别</p>
-<ol>
-<li>递归和枚举的区别在于：枚举是横向地把问题划分，然后依次求解子问题；而递归是把问题逐级分解，是纵向的拆分。</li>
-<li>递归和分治的区别在于：递归是一种编程技巧，一种解决问题的思维方式；分治算法很大程度上是基于递归的，解决更具体问题的算法思想。</li>
-</ol>
 </li>
-</ul>
-<ul>
+<li>
+<p>递归和枚举的区别在于：枚举是横向地把问题划分，然后依次求解子问题；而递归是把问题逐级分解，是纵向的拆分。</p>
+</li>
+<li>
+<p>递归和分治的区别在于：递归是一种编程技巧，一种解决问题的思维方式；分治算法很大程度上是基于递归的，解决更具体问题的算法思想。</p>
+</li>
 <li>
 <p>给定一个二叉树，它的每个结点都存放着一个整数值。</p>
+</li>
+</ul>
 <p><strong>找出路径和等于给定数值的路径总数。</strong></p>
 <p>路径不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。</p>
 <p>二叉树不超过 1000 个节点，且节点数值范围是 [-1000000,1000000] 的整数。</p>
-</li>
-</ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">-3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">null</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">-2</span><span class="p">,</span><span class="n">null</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="mi">10</span>
@@ -1345,7 +1341,7 @@
         
       
         
-          <script src="../../assets/javascripts/mathjax.js"></script>
+          <script src="../../js/umlconvert.js"></script>
         
       
     

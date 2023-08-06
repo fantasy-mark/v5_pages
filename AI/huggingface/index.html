@@ -1075,20 +1075,20 @@
 <p><img alt="uTools_1681433823693" src="../../static/imgs/uTools_1681433823693.png" /></p>
 <h4 id="_3">训练微调模型</h4>
 <ol>
-<li>
-<p>数据预处理，提取训练数据特征，这步Huggingface已经帮我们做好了，调用API就好了</p>
+<li>数据预处理，提取训练数据特征，这步Huggingface已经帮我们做好了，调用API就好了</li>
+</ol>
 <p>这里关注 <code>SquadExample</code> \ <code>SquadFeatures</code> \ <code>SquadResult</code></p>
 <ul>
-<li>SquadExample 是数据集经过处理后提取出的example，使用id进行索引，每个example都包括passage、question、answer等属性，但是passage、question、answer这些属性是用字符串格式保存的，输入到模型中需要进行一些变换，</li>
-</ul>
-<ul>
+<li>
+<p>SquadExample 是数据集经过处理后提取出的example，使用id进行索引，每个example都包括passage、question、answer等属性，但是passage、question、answer这些属性是用字符串格式保存的，输入到模型中需要进行一些变换，</p>
+</li>
 <li>
 <p>SquadFeatures 则是能够直接输入到模型中的<strong>instance</strong>。在两者之间定义了一个函数squad_convert_example_to_features 从 SquadExample 到 SquadFeatures 的转换。</p>
 <p>这里features并非模型的参数 <strong>teatures</strong>  !!! 可以理解为<strong>符合模型输入</strong>的<strong>实例</strong>格式。</p>
 </li>
-</ul>
-<ul>
-<li>SquadResult 则是模型的预测结果。</li>
+<li>
+<p>SquadResult 则是模型的预测结果。</p>
+</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">pickle</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span> <span class="nn">transformers.data.processors.squad</span> <span class="kn">import</span> <span class="n">SquadV2Processor</span><span class="p">,</span> <span class="n">squad_convert_examples_to_features</span>
@@ -1165,9 +1165,9 @@
 <a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">  </span><span class="o">(</span>qa_outputs<span class="o">)</span>:<span class="w"> </span>Linear<span class="o">(</span><span class="nv">in_features</span><span class="o">=</span><span class="m">768</span>,<span class="w"> </span><span class="nv">out_features</span><span class="o">=</span><span class="m">2</span>,<span class="w"> </span><span class="nv">bias</span><span class="o">=</span>True<span class="o">)</span>
 <a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="o">)</span>
 </code></pre></div>
-</li>
-<li>
-<p>利用格式化好的测试数据集，训练模型获得对应的<strong>weight</strong>和<strong>bias</strong>保存为文件</p>
+<ol>
+<li>利用格式化好的测试数据集，训练模型获得对应的<strong>weight</strong>和<strong>bias</strong>保存为文件</li>
+</ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">torch</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">BertForQuestionAnswering</span><span class="p">,</span> <span class="n">AdamW</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">RandomSampler</span><span class="p">,</span> <span class="n">TensorDataset</span>
@@ -1231,8 +1231,6 @@
 <a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>    <span class="c1"># 保存微调后的模型</span>
 <a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>    <span class="n">model</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="s2">&quot;SQuAD_finetune_bert&quot;</span><span class="p">)</span>
 </code></pre></div>
-</li>
-</ol>
 <h4 id="_4">加载微调后模型和参数文件</h4>
 <p><a href="https://zhuanlan.zhihu.com/p/596294919?utm_id=0">参考</a></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">torch</span>
@@ -1320,7 +1318,7 @@
         
       
         
-          <script src="../../assets/javascripts/mathjax.js"></script>
+          <script src="../../js/umlconvert.js"></script>
         
       
     

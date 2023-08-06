@@ -1045,16 +1045,18 @@
 <p>A Tensor library for C++11</p>
 </blockquote>
 <ul>
-<li>AT(ATen)负责声明和定义Tensor运算，是最常用到的命名空间</li>
-</ul>
-<ul>
-<li>pytorch使用aten/src/ATen/gen.py动态生成不同平台、不同数据类型相应的aten运算符</li>
-</ul>
-<ul>
+<li>
+<p>AT(ATen)负责声明和定义Tensor运算，是最常用到的命名空间</p>
+</li>
+<li>
+<p>pytorch使用aten/src/ATen/gen.py动态生成不同平台、不同数据类型相应的aten运算符</p>
+</li>
 <li>
 <p>pyroch的C++/cuda接口</p>
-<ul>
-<li>编写：c++/cuda拓展源文件(pybind11)</li>
+</li>
+<li>
+<p>编写：c++/cuda拓展源文件(pybind11)</p>
+</li>
 <li>编译：setuptools工具指导c++/cuda拓展的编译</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 文件结构如下：</span>
@@ -1105,8 +1107,6 @@
 <ul>
 <li>调用：torch.autograd.Functio类封装</li>
 </ul>
-</li>
-</ul>
 <h3 id="c10">C10</h3>
 <ul>
 <li>C10(Coffe Tensor)是 ATen 的基础，包含了PyTorch的核心抽象、Tensor和Storage数据结构的实际实现</li>
@@ -1117,16 +1117,16 @@
 <ul>
 <li>
 <p>torch命名空间下定义的 Tensor 相比于ATen 增加自动求导功能</p>
-<ul>
-<li>torch.autograd.function （函数的反向传播）</li>
+</li>
+<li>
+<p>torch.autograd.function （函数的反向传播）</p>
+</li>
 <li>torch.autograd.functional （计算图的反向传播）</li>
 <li>torch.autograd.gradcheck （数值梯度检查）</li>
 <li>torch.autograd.anomaly_mode （在自动求导时检测错误产生路径）</li>
 <li>torch.autograd.grad_mode （设置是否需要梯度）</li>
 <li>model.eval() 与 torch.no_grad()</li>
 <li>torch.autograd.profiler （提供 function 级别的统计信息）</li>
-</ul>
-</li>
 </ul>
 
 
@@ -1175,7 +1175,7 @@
         
       
         
-          <script src="../../assets/javascripts/mathjax.js"></script>
+          <script src="../../js/umlconvert.js"></script>
         
       
     

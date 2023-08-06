@@ -1092,11 +1092,9 @@
 </ul>
 <p><img alt="" src="../../static/imgs/uTools_1683517474867.png" /></p>
 <ul>
-<li>带短连接的网络的拟合高维函数的能力比普通连接的网络更强，梯度上比不加残差多了对x的梯度<ul>
+<li>带短连接的网络的拟合高维函数的能力比普通连接的网络更强，梯度上比不加残差多了对x的梯度</li>
 <li>更快的收敛</li>
 <li>加入项能避免求导后整体趋于0，不容易出现梯度太小而导致梯度消失</li>
-</ul>
-</li>
 </ul>
 <h3 id="transformer-attention-is-all-you-need">Transformer - Attention is All you Need</h3>
 <p><a href="https://arxiv.org/abs/1706.03762">论文</a></p>
@@ -1167,10 +1165,12 @@ Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}})V
 <h3 id="moco-momentum-contrast-for-unsupervised-visual-representation-learning">MOCO - Momentum Contrast for Unsupervised Visual Representation Learning</h3>
 <p><a href="https://arxiv.org/abs/1911.05722">论文</a></p>
 <ul>
-<li>对比学习的目的：自动的拉近相似样本之间的距离，增大不相似样本之间的距离</li>
-</ul>
-<ul>
-<li>使用对比学习，可以通过代理任务非常灵活定义正样本（如同张图片不同视角）</li>
+<li>
+<p>对比学习的目的：自动的拉近相似样本之间的距离，增大不相似样本之间的距离</p>
+</li>
+<li>
+<p>使用对比学习，可以通过代理任务非常灵活定义正样本（如同张图片不同视角）</p>
+</li>
 <li>动态字典的要求：（1）key数量足够多 （2）训练过程中，key要具有一致性，由相同或者相似的编码器得到，与q进行查询时才能保持一致（字典中的key是随机取样的）</li>
 <li>MoCo的两个亮点： （1）利用queue解决key数量过大，GPU显存不够的问题（每次只用queue中的一个batch进行训练） （2）引入momentum encoder，将m设大，是其更新缓慢，保证了key的一致性</li>
 <li>恺明大神非常有远见的提出了：it is possible to adopt MoCo for pretext tasks like masked auto-encoding，这正是两年后MAE的思想</li>
@@ -1222,7 +1222,7 @@ Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}})V
         
       
         
-          <script src="../../assets/javascripts/mathjax.js"></script>
+          <script src="../../js/umlconvert.js"></script>
         
       
     

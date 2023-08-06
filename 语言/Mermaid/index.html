@@ -289,6 +289,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    甘特圖
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    流程圖
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    時序圖
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -923,6 +944,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    甘特圖
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    流程圖
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    時序圖
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -943,19 +985,150 @@
 <div class="toc">
 <ul>
 <li><a href="#uml">UML</a></li>
+<li><a href="#_1">甘特圖</a></li>
+<li><a href="#_2">流程圖</a></li>
+<li><a href="#_3">時序圖</a></li>
 </ul>
 </div>
 <p><a href="https://github.com/mermaid-js/mermaid">Mermaid项目</a></p>
 <h5 id="uml">UML</h5>
 <ul>
 <li>UML分为3部分：类名、属性、方法</li>
-<li><code>+</code>表示公共，<code>-</code>表示私有，<code>#</code>表示保护</li>
-</ul>
-<ul>
-<li>6种关系：泛化（is）、实现、组合（多实现）、聚合（族群）、关联（has/属性）、依赖（use\入参）</li>
+<li>
+<p><code>+</code>表示公共，<code>-</code>表示私有，<code>#</code>表示保护</p>
+</li>
+<li>
+<p>6种关系：泛化（is）、实现、组合（多实现）、聚合（族群）、关联（has/属性）、依赖（use\入参）</p>
+</li>
 </ul>
 <p><img alt="UML" src="../../../static/imgs/UML.png" /></p>
 <p><img alt="UML" src="../../../static/imgs/UML2.png" /></p>
+<hr />
+<h5 id="_1">甘特圖</h5>
+<p><pre class="mermaid"><code>    gantt
+    dateFormat  YYYY-MM-DD
+    title Adding GANTT diagram functionality to mermaid
+
+    section A section
+    Completed task            :done,    des1, 2014-01-06,2014-01-08
+    Active task               :active,  des2, 2014-01-09, 3d
+    Future task               :         des3, after des2, 5d
+    Future task2              :         des4, after des3, 5d
+
+    section Critical tasks
+    Completed task in the critical line :crit, done, 2014-01-06,24h
+    Implement parser and jison          :crit, done, after des1, 2d
+    Create tests for parser             :crit, active, 3d
+    Future task in critical line        :crit, 5d
+    Create tests for renderer           :2d
+    Add to mermaid                      :1d
+
+    section Documentation
+    Describe gantt syntax               :active, a1, after des1, 3d
+    Add gantt diagram to demo page      :after a1  , 20h
+    Add another diagram to demo page    :doc1, after a1  , 48h
+
+    section Last section
+    Describe gantt syntax               :after doc1, 3d
+    Add gantt diagram to demo page      :20h
+    Add another diagram to demo page    :48h</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    gantt
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    dateFormat  YYYY-MM-DD
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    title Adding GANTT diagram functionality to mermaid
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    section A section
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    Completed task            :done,    des1, 2014-01-06,2014-01-08
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    Active task               :active,  des2, 2014-01-09, 3d
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    Future task               :         des3, after des2, 5d
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    Future task2              :         des4, after des3, 5d
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    section Critical tasks
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    Completed task in the critical line :crit, done, 2014-01-06,24h
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    Implement parser and jison          :crit, done, after des1, 2d
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    Create tests for parser             :crit, active, 3d
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    Future task in critical line        :crit, 5d
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    Create tests for renderer           :2d
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    Add to mermaid                      :1d
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    section Documentation
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    Describe gantt syntax               :active, a1, after des1, 3d
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    Add gantt diagram to demo page      :after a1  , 20h
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    Add another diagram to demo page    :doc1, after a1  , 48h
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    section Last section
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    Describe gantt syntax               :after doc1, 3d
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    Add gantt diagram to demo page      :20h
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    Add another diagram to demo page    :48h
+</code></pre></div></p>
+<h5 id="_2">流程圖</h5>
+<pre class="mermaid"><code>graph TB
+sq[Square shape] --&gt; ci((Circle shape))
+
+subgraph A subgraph
+    od&gt;Odd shape]-- Two line&lt;br&gt;edge comment --&gt; ro
+    di{Diamond with &lt;br/&gt; line break} -.-&gt; ro(Rounded&lt;br&gt;square&lt;br&gt;shape)
+    di==&gt;ro2(Rounded square shape)
+end
+
+%% Notice that no text in shape are added here instead that is appended further down
+e --&gt; od3&gt;Really long text with linebreak&lt;br&gt;in an Odd shape]
+
+%% Comments after double percent signs
+e((Inner / circle&lt;br&gt;and some odd &lt;br&gt;special characters)) --&gt; f(,.?!+-*ز)
+
+cyr[Cyrillic]--&gt;cyr2((Circle shape Начало));
+
+ classDef green fill:#9f6,stroke:#333,stroke-width:2px;
+ classDef orange fill:#f96,stroke:#333,stroke-width:4px;
+ class sq,e green
+ class di orange</code></pre>
+<h5 id="_3">時序圖</h5>
+<pre class="mermaid"><code>sequenceDiagram
+Alice -&gt;&gt; Bob: Hello Bob, how are you?
+Bob--&gt;&gt;John: How about you John?
+Bob--x Alice: I am good thanks!
+Bob-x John: I am good thanks!
+Note right of John: Bob thinks a long&lt;br/&gt;long time, so long&lt;br/&gt;that the text does&lt;br/&gt;not fit on a row.
+
+Bob--&gt;Alice: Checking with John...
+Alice-&gt;John: Yes... John, how are you?</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sequenceDiagram
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Alice -&gt;&gt; Bob: Hello Bob, how are you?
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Bob--&gt;&gt;John: How about you John?
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Bob--x Alice: I am good thanks!
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Bob-x John: I am good thanks!
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Note right of John: Bob thinks a long&lt;br/&gt;long time, so long&lt;br/&gt;that the text does&lt;br/&gt;not fit on a row.
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Bob--&gt;Alice: Checking with John...
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Alice-&gt;John: Yes... John, how are you?
+</code></pre></div>
+<pre class="mermaid"><code>sequenceDiagram
+loop Daily query
+    Alice-&gt;&gt;Bob: Hello Bob, how are you?
+    alt is sick
+        Bob-&gt;&gt;Alice: Not so good :(
+    else is well
+        Bob-&gt;&gt;Alice: Feeling fresh like a daisy
+    end
+
+    opt Extra response
+        Bob-&gt;&gt;Alice: Thanks for asking
+    end
+end</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sequenceDiagram
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>loop Daily query
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    Alice-&gt;&gt;Bob: Hello Bob, how are you?
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    alt is sick
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        Bob-&gt;&gt;Alice: Not so good :(
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    else is well
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        Bob-&gt;&gt;Alice: Feeling fresh like a daisy
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    end
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    opt Extra response
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        Bob-&gt;&gt;Alice: Thanks for asking
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    end
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>end
+</code></pre></div>
 
 
 
@@ -1003,7 +1176,7 @@
         
       
         
-          <script src="../../assets/javascripts/mathjax.js"></script>
+          <script src="../../js/umlconvert.js"></script>
         
       
     

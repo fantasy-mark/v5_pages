@@ -1102,20 +1102,20 @@
 </code></pre></div>
 <hr />
 <ul>
-<li>问：为何cli.command可以代替click.command</li>
-</ul>
-<ul>
+<li>
+<p>问：为何cli.command可以代替click.command</p>
+</li>
 <li>
 <p>答：</p>
+</li>
+</ul>
 <blockquote>
 <p><code>cli.command</code> 并不能代替 <code>click.command</code>。在你之前的消息中，你提到了 <code>mkdocs cli.command</code>，我猜测你可能是想问 <code>mkdocs</code> 中的 <code>cli.command</code> 是什么意思。</p>
 <p>在 <code>mkdocs</code> 中，<code>cli</code> 是一个模块，它使用了 <code>click</code> 库来定义命令行接口。因此，当你看到 <code>cli.command</code> 时，它实际上是指 <code>click.command</code>。也就是说，在 <code>mkdocs</code> 的 <code>cli</code> 模块中，<code>command</code> 是从 <code>click</code> 库中导入的。</p>
 </blockquote>
-</li>
-</ul>
 <ul>
-<li>
-<p>问：如果我这样定义cli可以使用cli.command了没？</p>
+<li>问：如果我这样定义cli可以使用cli.command了没？</li>
+</ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nd">@click.group</span><span class="p">(</span><span class="n">context_settings</span><span class="o">=</span><span class="p">{</span><span class="err">&#39;</span><span class="n">help_option_names</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="err">&#39;</span><span class="o">-</span><span class="n">h</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="o">--</span><span class="n">help</span><span class="err">&#39;</span><span class="o">]</span><span class="p">})</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nd">@click.version_option</span><span class="p">(</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w"> </span><span class="n">__version__</span><span class="p">,</span>
@@ -1126,11 +1126,9 @@
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nd">@common_options</span>
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">def</span><span class="w"> </span><span class="n">cli</span><span class="p">():</span>
 </code></pre></div>
-</li>
-</ul>
 <ul>
-<li>
-<p>答：</p>
+<li>答：</li>
+</ul>
 <p>是的，如果你使用 <code>click.group</code> 装饰器来定义 <code>cli</code> 函数，那么你就可以使用 <code>cli.command</code> 来定义子命令。</p>
 <p><code>click.group</code> 装饰器会将 <code>cli</code> 函数转换为一个命令组，它具有 <code>command</code> 方法，可以用来定义子命令。例如：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nd">@click</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="n">context_settings</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;help_option_names&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;-h&#39;</span><span class="p">,</span> <span class="s1">&#39;--help&#39;</span><span class="p">]})</span>
@@ -1149,8 +1147,6 @@
 <a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    <span class="o">...</span>
 </code></pre></div>
 <p>在这个例子中，我们使用 <code>cli.command</code> 装饰器来定义一个名为 <code>subcommand</code> 的子命令。</p>
-</li>
-</ul>
 <hr />
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># click.decorators.group</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">def</span> <span class="nf">group</span><span class="p">(</span>
@@ -1231,7 +1227,7 @@
         
       
         
-          <script src="../../assets/javascripts/mathjax.js"></script>
+          <script src="../../js/umlconvert.js"></script>
         
       
     

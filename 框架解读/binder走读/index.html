@@ -906,13 +906,15 @@
 </code></pre></div>
 <p><img alt="binder与各系统服务" src="../../../static/imgs/binder2fwk.drawio.svg" /></p>
 <ul>
-<li>为什么使用socket作为zygote通信</li>
-</ul>
-<ol>
-<li>zygote进程进程无法保证注册Binder时，init进程已经完成SeverManger的初始化</li>
+<li>
+<p>为什么使用socket作为zygote通信</p>
+</li>
+<li>
+<p>zygote进程进程无法保证注册Binder时，init进程已经完成SeverManger的初始化</p>
+</li>
 <li>Binder服务端会创建线程来接收Binder驱动数据，而fork多线程的进程容易造成死锁</li>
 <li>如果zygote进程使用Binder作为通信，则每次fork出来的进程多使用Binder对象消耗的内存</li>
-</ol>
+</ul>
 
 
 
@@ -960,7 +962,7 @@
         
       
         
-          <script src="../../assets/javascripts/mathjax.js"></script>
+          <script src="../../js/umlconvert.js"></script>
         
       
     

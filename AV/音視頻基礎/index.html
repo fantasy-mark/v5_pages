@@ -1350,16 +1350,16 @@ NV21 \quad \rightarrow \quad
 <p><a href="https://zhuanlan.zhihu.com/p/495091198">音视频开发进阶—视频编码之I，P，B帧</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/410882570">Easy Tech：什么是I帧、P帧和B帧？ </a></p>
 <ul>
-<li>
-<p>I帧或关键帧或帧内帧（I-frame or Key-Frame or Intra-frame）仅由帧内预测的宏块组成。</p>
+<li>I帧或关键帧或帧内帧（I-frame or Key-Frame or Intra-frame）仅由帧内预测的宏块组成。</li>
+</ul>
 <p>I帧中的每个宏块只能在同一帧内匹配其他宏块，这意味着，它只能利用帧内“<strong>空间冗余</strong>”来进行压缩。空间冗余是一个术语，用来指单个帧的像素之间的相似性。</p>
+<ul>
+<li>
+<p>P帧代表预测帧，除了空域预测以外，它还可以通过时域预测来进行压缩。P帧参考前面的帧进行运动估计。</p>
 </li>
-</ul>
-<ul>
-<li>P帧代表预测帧，除了空域预测以外，它还可以通过时域预测来进行压缩。P帧参考前面的帧进行运动估计。</li>
-</ul>
-<ul>
-<li>B帧可以参考在其前后出现的帧。由于B帧可以参考和插入在它之前和之后发生的两个（或更多）帧（在时间维度上），所以它可以显著降低帧的大小，同时保持视频质量。B帧能够利用空间冗余和时间冗余（未来的帧和过去的帧），这使得它在视频压缩中非常有用。<strong>B帧是资源密集型</strong>。</li>
+<li>
+<p>B帧可以参考在其前后出现的帧。由于B帧可以参考和插入在它之前和之后发生的两个（或更多）帧（在时间维度上），所以它可以显著降低帧的大小，同时保持视频质量。B帧能够利用空间冗余和时间冗余（未来的帧和过去的帧），这使得它在视频压缩中非常有用。<strong>B帧是资源密集型</strong>。</p>
+</li>
 </ul>
 <p><img alt="img" src="../../static/imgs/v2-5bc0d9d4d37aea2192e559eb51e110c6_720w.webp" /></p>
 
@@ -1409,7 +1409,7 @@ NV21 \quad \rightarrow \quad
         
       
         
-          <script src="../../assets/javascripts/mathjax.js"></script>
+          <script src="../../js/umlconvert.js"></script>
         
       
     
