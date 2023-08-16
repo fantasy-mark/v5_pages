@@ -77,7 +77,7 @@
     }
  
     onReady(function(){
-        convertUML('uml-flowchart', flowchart);
+        //convertUML('uml-flowchart', flowchart);
         convertUML('uml-sequence-diagram', Diagram, {theme: 'simple'});
         convertUML('mermaid')
     });
