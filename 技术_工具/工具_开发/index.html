@@ -1129,6 +1129,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    ssh
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1304,6 +1311,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    ssh
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1417,6 +1431,14 @@
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">USING</span><span class="w"> </span><span class="n">PERIODIC</span><span class="w"> </span><span class="k">COMMIT</span><span class="w"> </span><span class="mi">500</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">LOAD</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="s1">&#39;https://neo4j.com/docs/cypher-manual/4.1/csv/artists.csv&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">line</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">CREATE</span><span class="w"> </span><span class="p">(:</span><span class="n">Artist</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="k">year</span><span class="p">:</span><span class="w"> </span><span class="n">toInteger</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="err">}</span><span class="p">)</span>
+</code></pre></div>
+<h5 id="ssh">ssh</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 生成公私钥</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># windows 免密ssh登录</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nb">type</span><span class="w"> </span><span class="nv">$env</span>:USERPROFILE<span class="se">\.</span>ssh<span class="se">\i</span>d_rsa.pub<span class="w"> </span><span class="p">|</span><span class="w"> </span>ssh<span class="w"> </span>root@10.175.94.63<span class="w"> </span><span class="s2">&quot;cat &gt;&gt; .ssh/authorized_keys&quot;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># 拷贝文件到ssh服务器</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>scp<span class="w"> </span>.<span class="se">\d</span>ist<span class="se">\a</span>i_sqa-1.0-py3-none-any.whl<span class="w"> </span>root@10.175.94.63:/root/docker_project/ai/home/
 </code></pre></div>
 
 
