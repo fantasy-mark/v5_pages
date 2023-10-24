@@ -1338,12 +1338,12 @@
 <ol>
 <li>保证系统存在至少一块GPU</li>
 <li>查看 nvidia-smi（驅動），确认有驱动, 且 cuda driver &gt;= cuda toolkit 版本</li>
-<li>创建虚拟环境
+<li>创建虚拟环境</li>
+</ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>virtualenv
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>virtualenv<span class="w"> </span>venv
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>.<span class="se">\v</span>env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w"> </span>
-</code></pre></div></li>
-</ol>
+</code></pre></div>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 我的驅動版本是11.7,所以這裡cudatoolkit不能大於11.7</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># conda create --prefix=./venv python=3.10.9 cudnn=8.4.1.50 cudatoolkit=11.7.0 ffmpeg </span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># conda activate ./venv</span>
